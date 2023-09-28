@@ -1,19 +1,19 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Productos from './components/Productos';
-import DetalleProducto from './components/DetalleProducto';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Producto from "./pages/Producto";
+import Productos from "./pages/Productos";
+import Layout from "./pages/Layout";
 
-function App() {
+export default function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/productos" exact component={Productos} />
-        <Route path="/producto/:id" component={DetalleProducto} />
-      </Switch>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/Producto/:id" element={<Producto />} />
+          <Route path="/Productos" element={<Productos />} />
+      </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
