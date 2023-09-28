@@ -4,15 +4,14 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../Home.css'; // Asegúrate de importar tu archivo de estilos CSS personalizado aquí
 import productos from "../productos.json";
-
 const Home = () => {
-  
   return (
     <div className="home-container">
+      <img style={{width: 150}} src="https://cdn.discordapp.com/attachments/1156707363022176387/1156772840339681310/9z_Team_allmode.png?ex=65163028&is=6514dea8&hm=d98da6e1dab8b58d90b0cd344fb2b6aff44c9d8e16b005cd4f735866d942f0b1&" alt="Descripción de la imagen" />
       <div className="Titulo">
         <br></br>
         <br></br>  
-        <h1>Bienvenido a nuestra tienda en línea de muebles</h1>
+        <h1>👾 👾 Bienvenido a nuestra tienda en línea de muebles gamer 👾 👾</h1>
         <br></br><br></br>
       </div>
       <div className='Link'>

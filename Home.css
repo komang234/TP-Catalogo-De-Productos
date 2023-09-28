@@ -65,7 +65,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; /* Distribuye los productos en dos columnas */
-  background-color: #0c335a; /* Azul oscuro */
+  background-color: #552280;
   padding: 20px;
   border: 2px solid #ffffff;
   border-radius: 10px;
@@ -167,7 +167,7 @@ button:hover {
 
 /* Estilos para la información del producto en la sección de detalles */
 .product-info {
-  background-color: #1a1a1a; /* Fondo negro */
+  background-color: #552280;
   color: #ffffff; /* Texto blanco */
   padding: 25px;
   border: 2px solid #ffffff;
