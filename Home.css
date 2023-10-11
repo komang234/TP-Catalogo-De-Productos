@@ -183,3 +183,30 @@ button:hover {
   margin-top: 10px;
   font-weight: bold;
 }
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.search-bar {
+  text-align: center;
+}
+
+#category-input {
+  width: 300px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.recommended-categories {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.recommended-categories button {
+  background-color: #28a745;
+  margin: 5px;
+}

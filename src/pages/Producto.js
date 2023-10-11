@@ -1,13 +1,22 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import productos from "../productos.json";
-import '../Home.css'; // Asegúrate de importar tu archivo de estilos CSS personalizado aquí
+import React, {useEffect, useState} from "react";
+import { useParams, Link } from "react-router-dom";
+import axios from 'axios'
+import '../Home.css'; 
+import { useContextState } from "../ContextState.js";
 
-export default function Producto() {const handleGoBack = () => {
-  window.history.back(); // Esta función regresará a la página anterior en el historial del navegador
-};
+export default function Producto() {
   const { id } = useParams();
-  const producto = productos.find((p) => p.id === parseInt(id));
+  const [producto, setProduct] = useState([]);
+  const { contextState, setContextState } = useContextState();
+  
+  useEffect(() => {
+    axios.get('https://dummyjson.com/products/' + id)
+    .then((response)=> {
+      setProduct(response.data);
+    })
+    .catch((error)=> {
+      console.log(error);
+    })}, [])
 
   if (producto) {
     return (

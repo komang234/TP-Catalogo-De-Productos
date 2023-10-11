@@ -183,3 +183,70 @@ button:hover {
   margin-top: 10px;
   font-weight: bold;
 }
+
+.layout-container {
+  background-color: #1a1a1a; /* Negro */
+  color: #6b0a7a; /* Violeta */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #6b0a7a; /* Borde violeta */
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.search-bar {
+  text-align: center;
+}
+
+/* Estilo para el input con diseño futurista */
+#category-input {
+  width: 300px;
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-bottom: 2px solid #6b0a7a; /* Línea inferior violeta */
+  background: transparent;
+  color: #6b0a7a; /* Texto violeta */
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+#category-input::placeholder {
+  color: #6b0a7a; /* Color del marcador de posición violeta */
+  opacity: 0.7; /* Opacidad reducida para el marcador de posición */
+}
+
+#category-input:focus {
+  border-color: #00d2ff; /* Cambia el color de la línea inferior al obtener el enfoque */
+}
+
+/* Animación de entrada para el input */
+@keyframes inputFadeIn {
+  from {
+      transform: translateY(-20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.animated-input {
+  animation: inputFadeIn 0.5s ease-in-out; /* Aplica la animación al input */
+}
+
+.recommended-categories {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.recommended-categories button {
+  background-color: #6b0a7a; /* Violeta */
+  margin: 5px;
+}
