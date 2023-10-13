@@ -185,20 +185,60 @@ button:hover {
 }
 
 .layout-container {
+  background-color: #1a1a1a; /* Negro */
+  color: #6b0a7a; /* Violeta */
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  justify-content: center;
+  border: 2px solid #6b0a7a; /* Borde violeta */
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
 }
+
 
 .search-bar {
   text-align: center;
 }
 
+/* Estilo para el input con diseño futurista */
 #category-input {
   width: 300px;
   padding: 10px;
   margin-right: 10px;
+  border: none;
+  border-bottom: 2px solid #6b0a7a; /* Línea inferior violeta */
+  background: transparent;
+  color: #6b0a7a; /* Texto violeta */
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+#category-input::placeholder {
+  color: #6b0a7a; /* Color del marcador de posición violeta */
+  opacity: 0.7; /* Opacidad reducida para el marcador de posición */
+}
+
+#category-input:focus {
+  border-color: #00d2ff; /* Cambia el color de la línea inferior al obtener el enfoque */
+}
+
+/* Animación de entrada para el input */
+@keyframes inputFadeIn {
+  from {
+      transform: translateY(-20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.animated-input {
+  animation: inputFadeIn 0.5s ease-in-out; /* Aplica la animación al input */
 }
 
 .recommended-categories {
@@ -207,6 +247,75 @@ button:hover {
 }
 
 .recommended-categories button {
-  background-color: #28a745;
+  background-color: #6b0a7a; /* Violeta */
   margin: 5px;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 2px solid #6b0a7a;
+  background-color: #000;
+  color: #6b0a7a;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 10px #6b0a7a;
+}
+
+button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: #000;
+  color: #6b0a7a;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #6b0a7a;
+  color: #000;
+}
+
+.CategoriasRecomendadas {
+  margin-bottom: 20px;
+  color: #6b0a7a;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+input[type="text"], button {
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.CategoriasRecomendadas p, .Row a button {
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 0.4s;
 }

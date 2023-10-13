@@ -8,25 +8,23 @@ export default function Layout() {
     const { contextState, setContextState } = useContextState();
 
     return (
-    <div className="layout-container">
-        <div className="search-bar Row">
+    <div className="buscador">
+        <div className="Row">
             <br></br><br></br><br></br>
-            <input className="animated-input" id="." type="text" placeholder="Ingrese aquí la categoría que quieres buscar" onChange={()=>{setCategory(document.getElementById(".").value)}}></input>
-            <Link to={`/Resultado/${category}`}> <button>Buscar categoria</button></Link>
+            <input id="." type="text" placeholder="Buscar categoria..." onChange={()=>{setCategory(document.getElementById(".").value)}}></input>
+            <Link to={`/Buscador/${category}`}> <button>Buscar categoria</button></Link>
         </div>
         <div className="Row">
             <div className="CategoriasRecomendadas">
-                <p>Categorias Recomendadas:</p>
+            <p>Categorias Recomendadas:</p>
             </div>
-            <Link to={`/Resultado/${"skincare"}`}><button>skincare</button></Link>
-            <Link to={`/Resultado/${"laptops"}`}><button>laptops</button></Link>
-            <Link to={`/Resultado/${"smartphones"}`}><button>smartphones</button></Link>
-            <Link to={`/Resultado/${"fragrances"}`}><button>fragrances</button></Link>
-            <Link to={`/Resultado/${"groceries"}`}><button>groceries</button></Link>
-            <Link to={`/Resultado/${"home-decoration"}`}><button>home-decoration</button></Link>
+            <Link to={`/Buscador/${"skincare"}`}><button>skincare</button></Link>
+            <Link to={`/Buscador/${"laptops"}`}><button>laptops</button></Link>
+            <Link to={`/Buscador/${"smartphones"}`}><button>smartphones</button></Link>
+            <Link to={`/Buscador/${"fragrances"}`}><button>fragrances</button></Link>
+            <Link to={`/Buscador/${"groceries"}`}><button>groceries</button></Link>
+            <Link to={`/Buscador/${"home-decoration"}`}><button>home-decoration</button></Link>
         </div>
-        
-        
         <Outlet />
     </div>
     );

@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from 'axios'
-import '../Home.css'; 
+import '../Home.css';
 import { useContextState } from "../ContextState.js";
 
 export default function Producto() {
   const { id } = useParams();
-  const [producto, setProduct] = useState([]);
+  const [producto, setProduct] = useState(null);
+  const [error, setError] = useState(null);
   const { contextState, setContextState } = useContextState();
   
   useEffect(() => {
@@ -16,26 +17,32 @@ export default function Producto() {
     })
     .catch((error)=> {
       console.log(error);
+      setError(error);
     })}, [])
 
-  if (producto) {
+  if (error) {
+    return <div>Ocurrió un error al obtener los datos del producto: {error.message}</div>;
+  } else if (producto) {
     return (
       <div className="product-details">
-        <br></br><br></br><br></br><br></br><br></br>
-        <img src={producto.img1} alt={producto.name} className="product-imageDetalles" />
-        <br></br><br></br><br></br><br></br><br></br>
+      <br></br><br></br><br></br><br></br>
+        {producto.images && producto.images[0] ? <img src={producto.images[0]} alt={producto.title}/> : <p>No se encontró la imagen del producto</p>}
         <div className="product-info">
-          <h1 className="product-name">{`Nombre: ${producto.name}`}</h1>
-          <p className="product-description">{`Descripción: ${producto.descripcion}`}</p>
-          <p className="product-category">{`Categoría: ${producto.categoria}`}</p>
+          <h1 className="product-name">{`${producto.title}`}</h1>
+          <p className="product-description">{`Descripción: ${producto.description}`}</p>
+          <p className="product-category">{`Categoría: ${producto.category}`}</p>
+          
+          
+          
         </div>
-        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+        <div className="Link">
+          
+        </div>
+        <br></br><br></br><br></br><br></br>
+        </div>
         
-      
-      </div>
     );
   } else {
-    return <div>Producto no encontrado</div>;
+    return <div>El producto no ha sido encontrado.</div>;
   }
 }
